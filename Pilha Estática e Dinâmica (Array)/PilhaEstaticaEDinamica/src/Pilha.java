@@ -4,9 +4,8 @@ public class Pilha<T> {
     private int top = -1;
     private T[] data;
 
-    public Pilha(Class<T> clazz, int size) {
-        // Utilizamos reflection para criar um array do tipo T
-        data = (T[]) Array.newInstance(clazz, size);
+    public Pilha(int size) {
+        data = (T[]) new Object[size];
     }
 
     public void push(T value) {
@@ -47,7 +46,7 @@ public class Pilha<T> {
 
     public static void main(String[] args) {
         // Exemplo de uso com Integer
-        Pilha<Integer> pilha = new Pilha<>(Integer.class, 10);
+        Pilha<Integer> pilha = new Pilha<>(10);
         pilha.push(10);
         pilha.push(20);
         System.out.println("Topo da pilha: " + pilha.peek());
@@ -55,7 +54,7 @@ public class Pilha<T> {
         System.out.println("Topo da pilha: " + pilha.peek());
 
         // Exemplo de uso com String
-        Pilha<String> pilhaString = new Pilha<>(String.class, 10);
+        Pilha<String> pilhaString = new Pilha<>(10);
         pilhaString.push("Olá");
         pilhaString.push("Mundo");
         System.out.println("Topo da pilha: " + pilhaString.peek());
