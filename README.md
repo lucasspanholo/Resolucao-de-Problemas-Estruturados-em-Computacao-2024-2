@@ -1,0 +1,1 @@
+# Resolucao-de-Problemas-Estruturados-em-Computacao-2024-2
